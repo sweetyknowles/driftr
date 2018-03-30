@@ -1,19 +1,31 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
+import styled from'styled-components'
 
+const NavBar =styled.div`
+display:flex;
+justify-content:space-around;
+align-items: center;
+width:100vw;
+padding: 15px 2.5vw;
+background:lightcoral;
 
-class NavBar extends Component {
-    render() {
-        return (
-            <div>
-                <h1>driftr</h1>
-                <ul>
-                    <li>Home</li>
-                    <li></li>
-                </ul>
+`
 
-            </div>
-        );
+const Nav = () => {
+        return (  
+            <NavBar>
+                <h1>Driftrs Lounge</h1>
+                
+                <h1>Tunr</h1>
+      <div>
+        <div><Link to="/">All Artists</Link></div>
+        <div><Link to="/artist/3">Test Single Artist</Link></div>
+      </div>
+                
+            </NavBar>
+        ) 
     }
-}
 
-export default NavBar;
+
+export default Nav;

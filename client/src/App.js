@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios'
@@ -22,17 +23,21 @@ class App extends Component {
   }
 
   render() {
+    <Router>
     return (
       <div className="App">
         <NavBar/>
+        <Switch>
         {this.state.cities.map(city => {
           return (
             <div>
               <a href={`/cities/${city.id}`}><h3>{city.name}</h3></a>
+            </Switch>
             </div>
           )
         })}
       </div>
+      </Router>
     );
   }
 }
