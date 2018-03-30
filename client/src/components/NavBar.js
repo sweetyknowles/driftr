@@ -17,10 +17,10 @@ const Nav = () => {
             <NavBar>
                 <h1>Driftrs Lounge</h1>
                 
-                <h1>Tunr</h1>
+                
       <div>
-        <div><Link to="/">All Artists</Link></div>
-        <div><Link to="/artist/3">Test Single Artist</Link></div>
+        <div><Link to="/">Cities</Link></div>
+        <div><Link to="/CityView/3">City View</Link></div>
       </div>
                 
             </NavBar>
