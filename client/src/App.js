@@ -16,14 +16,17 @@ class App extends Component {
       <Router>
         <div className="App">
           <NavBar />
-
+        
           <CityList />
           
           <Switch>
             <Route path="/cities/:id" component={CityView} />
           </Switch>
         </div>
+        
+        
       </Router>
+      
     );
   }
 }
