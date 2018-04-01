@@ -17,9 +17,9 @@ class App extends Component {
       <Router>
         <div className="App">
           <NavBar />
-          <CityList />
           <Switch>
-            <Route path="/cities/:id" component={CityView}/>
+            <Route exact path="/" component={CityList}/>
+            <Route exact path="/cities/:id" component={CityView}/>
 
           </Switch>
         </div>
