@@ -33,7 +33,7 @@ class CityView extends Component {
             <div>
                 <h1>{this.state.city.name}</h1>
                 <img src={this.state.city.image} alt={`Image of ${this.state.city.name}`}/>
-                <h2>Comments</h2>
+                <h2>Posts</h2>
                 {this.state.posts.map((post,i) => {
                     return(
                         <div>
