@@ -3,6 +3,8 @@ import axios from 'axios'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
+
+
 class CityList extends Component {
     state = {
         cities: []
@@ -21,16 +23,24 @@ class CityList extends Component {
     render() {
         return (
             <div>
-                {this.state.cities.map((city,i) => {
+                {this.state.cities.map((city, i) => {
                     return (
-                        <div key={i}>
-                            <a href={`/cities/${city.id}`}><h3>{city.name}</h3></a>
-                            <Imagewrapper>
-                            <img src ={city.image}/>
-                            </Imagewrapper>
-                            </div>
-                        
+                        <div>
+                            <div key={i}>
 
+                            </div>
+                         
+                                <div class="parallax">
+                                <div data-aos="fade-up" data-aos-easing="ease-in-quad" data-aos-once="true" data-aos-duration='700'>
+                                <img id="cityImage" src={city.image} alt="image here"/></div>
+                                </div>
+                            <div class="section white">
+                                <div class="row container">
+                                    <h4 class="header" id="mainTopText"><a href={`/cities/${city.id}`}>{city.name}</a></h4>
+                                    <p class="grey-text text-darken-3 lighten-3" id="mainSubText">{city.description}</p>
+                                </div>
+                            </div>
+                        </div>
                     )
                 })}
             </div>

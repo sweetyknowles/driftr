@@ -1,8 +1,13 @@
 .App {
   text-align: center;
+  background-color: rgb(189, 243, 236);
 
 }
-
+img {
+  min-width: 100vw;
+  max-height: 750px;
+  border: 4px solid rgb(51, 245, 196);
+}
 .background {
 background-color: blueviolet;
 
@@ -27,7 +32,3 @@ background-color: blueviolet;
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
