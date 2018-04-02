@@ -22,7 +22,7 @@ class CityList extends Component {
                 {this.state.cities.map((city,i) => {
                     return (
                         <div key={i}>
-                            <a href={`/cities/${city.name}`}><h3>{city.name}</h3></a>
+                            <a href={`/cities/${city.id}`}><h3>{city.name}</h3></a>
                         </div>
                     )
                 })}
