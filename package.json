@@ -10,6 +10,8 @@
     "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
   },
   "dependencies": {
+    "aos": "^2.2.0",
+    "jquery-parallax.js": "^1.5.0",
     "material-ui": "^0.20.0"
   }
 }
