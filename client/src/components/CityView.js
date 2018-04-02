@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import NewPost from './NewPost'
+
 import styled from 'styled-components'
 
 const SwagBag = styled.div`
@@ -21,12 +23,45 @@ border: 3px solid grey
 }
 `
 
+
 class CityView extends Component {
     state = {
         city: {},
-        posts: []
+        posts: [],
+        newPost: {
+            title: '',
+            text: ''
+        }
     }
 
+    deletePost = async(postId) => {
+        console.log(postId)
+
+        const res = await axios.delete(`/api/cities/${this.props.match.params.id}/posts/${postId}/`)
+        console.log(res)
+        await this.getPosts()
+    }
+
+    createNewPost = async (event) => {
+        event.preventDefault()
+        const res = await axios.post(`/api/cities/${this.state.city.id}/posts`, this.state.newPost)
+        const posts = [...this.state.posts, res.data]
+        this.setState({
+            posts,
+            newPost: {
+                title: '',
+                text: ''
+            }
+        })
+        await this.getPosts()
+    }
+
+    handleChange = (event) => {
+        const newPost = { ...this.state.newPost }
+        const attribute = event.target.name
+        newPost[attribute] = event.target.value
+        this.setState({ newPost: newPost })
+    }
 
     componentDidMount() {
         this.getCity()
@@ -38,7 +73,6 @@ class CityView extends Component {
         const id = this.props.match.params.id
         const res = await axios.get(`/api/cities/${id}/posts`)
         this.setState({ posts: res.data.posts })
-        console.log(res.data.posts)
 
     }
 
@@ -60,11 +94,19 @@ class CityView extends Component {
 
                             <h2>{post.title}</h2>
                             <h4>{post.text}</h4>
+                            <button onClick={() => this.deletePost(post.id)}>Delete Post</button>
+
+
                         </div>
 
                     )
                 })}
             </SwagBag>
+                <NewPost handleChange={this.handleChange}
+                    createNewPost={this.createNewPost}
+                    posts={this.state.posts}
+                    newPost={this.state.newPost} />
+            </div>
         );
     }
 }
