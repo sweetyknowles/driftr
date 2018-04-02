@@ -8,6 +8,7 @@ const NavStyle = styled.div`
 }
 li {
     font-family: EB Garamond
+    background-color: rgb(0, 230, 184);
 } 
 }
 `
