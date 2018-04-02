@@ -37,7 +37,7 @@ class CityList extends Component {
                             <div class="section white">
                                 <div class="row container">
                                     <h4 class="header" id="mainTopText"><a href={`/cities/${city.id}`}>{city.name}</a></h4>
-                                    <p class="grey-text text-darken-3 lighten-3" id="mainSubText">Click on the city name to get more information about it!</p>
+                                    <p class="grey-text text-darken-3 lighten-3" id="mainSubText">{city.description}</p>
                                 </div>
                             </div>
                         </div>

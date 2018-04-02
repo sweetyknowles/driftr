@@ -84,6 +84,7 @@ class CityView extends Component {
 
     render() {
         return (
+            <div>
             <SwagBag>
                 <h1>{this.state.city.name}</h1>
                 <img src={this.state.city.image} alt={`Image of ${this.state.city.name}`} />
