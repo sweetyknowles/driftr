@@ -95,7 +95,8 @@ class CityView extends Component {
 
                             <h2>{post.title}</h2>
                             <h4>{post.text}</h4>
-                            <button onClick={() => this.deletePost(post.id)}>Delete Post</button>
+                            <a onClick={() => this.deletePost(post.id)} class="waves-effect waves-light btn-large"><i class="material-icons right"></i>Delete Post</a>
+                            {/* <button onClick={() => this.deletePost(post.id)}>Delete Post</button> */}
 
 
                         </div>
