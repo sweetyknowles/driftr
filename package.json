@@ -1,12 +1,15 @@
 {
-    "name": "driftr",
-    "engines": {
-      "node": "9.9.0"
-    },
-    "scripts": {
-        "dev": "nodemon server.js",
-      "build": "cd client && npm install && npm run build && cd ..",
-      "deploy": "cp -a client/build/. public/",
-      "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
-    }
+  "name": "driftr",
+  "engines": {
+    "node": "9.9.0"
+  },
+  "scripts": {
+    "dev": "nodemon server.js",
+    "build": "cd client && npm install && npm run build && cd ..",
+    "deploy": "cp -a client/build/. public/",
+    "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
+  },
+  "dependencies": {
+    "material-ui": "^0.20.0"
+  }
 }

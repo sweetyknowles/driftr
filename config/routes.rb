@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
     namespace :api do
     resources :posts do
     resources :cities 
@@ -22,3 +23,15 @@ end
 #                 PATCH  /api/posts/:id(.:format)                 api/posts#update
 #                 PUT    /api/posts/:id(.:format)                 api/posts#update
 #                 DELETE /api/posts/:id(.:format)                 api/posts#destroy
+=======
+
+
+  namespace :api do 
+    resources :cities do
+      resources :posts
+    end 
+  end 
+
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+end
+>>>>>>> a37e4630ddf2c8201a0f211ea3ade26f0437d75c
