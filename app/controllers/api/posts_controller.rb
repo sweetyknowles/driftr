@@ -36,8 +36,6 @@ class Api::PostsController < ApplicationController
 
     def destroy
         Post.find(params[:id]).destroy
-
-        redirect_to :api_city_posts
     end
 
     private
