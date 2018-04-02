@@ -1,44 +1,30 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
-import styled from'styled-components'
-import { injectGlobal } from "styled-components";
-
-
-
-injectGlobal`
-@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great');
+import styled from 'styled-components';
+const NavStyle = styled.div`
+.nav-wrapper {
+    background-color: seagreen;
+}
 `
+class NavBar extends Component {
 
+    render() {
+        return (
+            <NavStyle>
+                <nav>
 
-const NavBar =styled.div`
-font-family: 'Fredericka the Great', cursive;
-color: blue;
-display:flex;
-justify-content:space-around;
-align-items: center;
-width:100vw;
-padding: 15px 2.5vw;
-background:pink;
-`
+                    <div class="nav-wrapper">
+                        <a href="#" class="brand-logo right">Driftr Lounge</a>
+                        <ul id="nav-mobile" class="left hide-on-med-and-down">
+                            <li><a href="sass.html">Cities</a></li>
+                            <li><a href="badges.html">Posts</a></li>
+                            <li><a href="collapsible.html">About</a></li>
+                        </ul>
+                    </div>
+                </nav>
 
-const Nav = () => {
-        return (  
-            <NavBar>
-               
-                <h1>Driftrs Lounge</h1>
-                
-                
-      <div>
-        <div><Link to="/">Home</Link></div>
-        <div><Link to="/CityView/3">City View</Link></div>
-      </div>
-      
-            </NavBar>
-        ) 
+            </NavStyle>
+        );
     }
+}
 
-    
-   
-
-
-export default Nav;
+export default NavBar;
