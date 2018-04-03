@@ -14,6 +14,17 @@ font-family: EB Garamond;
 font-size: 25px;
 }
 `
+const Introstyle = styled.div`
+p2{
+
+    font-family: EB Garamond;
+    font-size: 25px;
+    font-weight: Bold;  
+    color: teal; 
+    text-shadow:1px 1px black;
+    }
+
+`
 
 
 class CityList extends Component {
@@ -35,6 +46,14 @@ class CityList extends Component {
         return (
 
             <div>
+            <Introstyle>
+                <p2> 
+                    Welcome Aboard!
+                    <br/>
+                    Explore and plan your next trip in cities below. 
+                </p2>
+
+            </Introstyle>
                 {this.state.cities.map((city, i) => {
                     return (
                         <div>
@@ -54,6 +73,7 @@ class CityList extends Component {
                                         <h4 class="header" id="mainTopText"><Link to={`/cities/${city.id}`}>{city.name}</Link></h4>
                                         <p class="grey-text text-darken-3 lighten-3" id="mainSubText">{city.description}</p>
                                     </LinkStyle>
+                                    
                                 </div>
                             </div>
                         </div>
