@@ -56,7 +56,7 @@ class EditPost extends Component {
                 </Form.Field>
                 <Form.Field>
                     <label>Text</label>
-                    <TextArea cols="50" rows="200"
+                    <Input
                         placeholder={this.props.post.text}
                         name="text"
                         type="text"
