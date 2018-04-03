@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root "application#index"
+  root "cities#index"
   
   namespace :api do 
     resources :cities do
