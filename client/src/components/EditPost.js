@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Form, Button, Input } from 'semantic-ui-react'
 
+
+
 class EditPost extends Component {
 
     state = {
@@ -9,7 +11,6 @@ class EditPost extends Component {
     
     }
 
-  
 
     toggleEditView = () => {
         this.setState({ editView: !this.state.editView })

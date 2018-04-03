@@ -4,6 +4,8 @@ import NewPost from './NewPost'
 import EditPost from './EditPost'
 import styled from 'styled-components'
 
+
+
 const SwagBag = styled.div`
 h1 {
 
@@ -11,6 +13,7 @@ font-family: Philosopher;
 color: darkgray;
 
 }
+
 h2, h4 {
     font-family: EB Garamond;
 }
