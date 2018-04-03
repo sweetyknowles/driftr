@@ -7,7 +7,7 @@ const IntroBoxLander= styled.div`
 #LanderImg {
 border: 4px solid rgba(0, 230, 184, 0.5);
 min-width: 100vw;
-max-height: 95vh;
+max-height: 92.75vh;
 }
 `
 
@@ -64,7 +64,7 @@ class CityList extends Component {
         
             <div>
             <IntroBoxLander>
-            <img id="LanderImg" src="https://i.imgur.com/bwVjZFm.jpg" alt="drift lander" />
+            <img id="LanderImg" class="responsive-img" src="https://i.imgur.com/bwVjZFm.jpg" alt="drift lander" />
         </IntroBoxLander>
 
 
@@ -80,7 +80,7 @@ class CityList extends Component {
 
                             <div class="parallax">
                                 <Link to={`/cities/${city.id}`}>
-                                    <img id="cityImage" src={city.image} alt="image here" />
+                                    <img id="cityImage" class="responsive-img" src={city.image} alt="image here" />
                                 </Link>
                             </div>
                             <div class="section white">
