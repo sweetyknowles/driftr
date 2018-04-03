@@ -3,6 +3,15 @@ import axios from 'axios'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
+const IntroBoxLander= styled.div`
+#LanderImg {
+border: 4px solid rgba(0, 230, 184, 0.5);
+min-width: 100vw;
+max-height: 95vh;
+}
+`
+
+
 const CityNameStyler = styled.div`
 #CityName {
     text-decoration: none;
@@ -50,14 +59,22 @@ class CityList extends Component {
 
     render() {
         return (
-
+        
             <div>
+            <IntroBoxLander>
+            <img id="LanderImg" src="https://i.imgur.com/bwVjZFm.jpg" alt="drift lander" />
+        </IntroBoxLander>
+
+
+           
                 {this.state.cities.map((city, i) => {
                     return (
                         <div>
                             <div key={i}>
 
                             </div>
+
+                         
 
                             <div class="parallax">
                                 <Link to={`/cities/${city.id}`}>
