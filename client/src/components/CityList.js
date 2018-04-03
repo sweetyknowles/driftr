@@ -5,6 +5,17 @@ import { Link } from 'react-router-dom'
 
 
 
+const LinkStyle = styled.div`
+h4 {
+font-family: Philosopher;
+}
+p {
+font-family: EB Garamond;
+font-size: 25px;
+}
+`
+
+
 class CityList extends Component {
     state = {
         cities: []
@@ -22,6 +33,7 @@ class CityList extends Component {
 
     render() {
         return (
+
             <div>
                 {this.state.cities.map((city, i) => {
                     return (
@@ -29,15 +41,19 @@ class CityList extends Component {
                             <div key={i}>
 
                             </div>
-                         
-                                <div class="parallax">
-                                <div data-aos="fade-up" data-aos-easing="ease-in-quad" data-aos-once="true" data-aos-duration='700'>
-                                <img id="cityImage" src={city.image} alt="image here"/></div>
-                                </div>
+
+
+                            <div class="parallax">
+                                <Link to={`/cities/${city.id}`}>
+                                    <img id="cityImage" src={city.image} alt="image here" />
+                                </Link>
+                            </div>
                             <div class="section white">
                                 <div class="row container">
-                                    <h4 class="header" id="mainTopText"><a href={`/cities/${city.id}`}>{city.name}</a></h4>
-                                    <p class="grey-text text-darken-3 lighten-3" id="mainSubText">{city.description}</p>
+                                    <LinkStyle>
+                                        <h4 class="header" id="mainTopText"><Link to={`/cities/${city.id}`}>{city.name}</Link></h4>
+                                        <p class="grey-text text-darken-3 lighten-3" id="mainSubText">{city.description}</p>
+                                    </LinkStyle>
                                 </div>
                             </div>
                         </div>

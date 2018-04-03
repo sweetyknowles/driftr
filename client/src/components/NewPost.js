@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
-import { Form, Button } from 'semantic-ui-react'
+import { Form, Button } from 'semantic-ui-react';
+import styled from 'styled-components';
 
 
 
+const ButtonStyling = styled.button`
+color: white;
+background-color: teal;
+text-transform: uppercase;
+padding: 17.5px 40px;
+
+`
 
 class NewPost extends Component {
 
@@ -19,7 +27,8 @@ class NewPost extends Component {
     render() {
         return (
             <div>
-                <button onClick={this.toggleNewPost}>New Post</button>
+                 <a onClick={this.toggleNewPost} class="waves-effect waves-light btn-large"><i class="material-icons right"></i>New Post</a>
+               
             { this.state.newPostView
 
         
@@ -41,7 +50,9 @@ class NewPost extends Component {
                         onChange={this.props.handleChange} />
 
                 </Form.Field>
-                <Button type='submit'>Submit</Button>
+
+               <ButtonStyling type='submit'>Submit</ButtonStyling>
+                
             </Form>
 
             : null}

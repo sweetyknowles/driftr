@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   attr_accessible :title :content
 
   # the content cannot be empty
-validates :title :content, :presence =>true
+validates :title, :text :content, :presence =>true
 # user is restricted to the content length between 1-200
 validates :title, :length => { :minimum => 1 }
 validates :title, :length => { :maximum => 200}
