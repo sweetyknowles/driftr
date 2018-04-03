@@ -37,16 +37,16 @@ h2, h4 {
 }
 
 img {
-  width: 65vw;
-  height: 45vh;
+  width: 90vw;
+  height: 70vh;
   border: 6px solid rgb(51, 245, 196); 
 }
 
 #postBox {
-margin-left: 12.5vw;
+margin-left: 7.5vw;
 margin-bottom: 3.5vh;
-max-width: 75%;
-min-height: 200px;
+width: 85vw;
+height: 60vh;
 background: rgba(255, 255, 255, 0.2);
 border: 4px solid grey;
 }
@@ -149,7 +149,7 @@ class CityView extends Component {
             <div>
                 <SwagBag>
                     <h1>{this.state.city.name}</h1>
-                    <img src={this.state.city.image} alt={`Image of ${this.state.city.name}`} />
+                    <img src={this.state.city.image} class="responsive-img" alt={`Image of ${this.state.city.name}`} />
                     <h1>Posts</h1>
                     {this.state.posts.map((post, i) => {
                         return (
