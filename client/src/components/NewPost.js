@@ -39,7 +39,8 @@ class NewPost extends Component {
                     <input placeholder='Title'
                         name="title"
                         value={this.props.newPost.title}
-                        onChange={this.props.handleChange} />
+                        onChange={this.props.handleChange} 
+                        required />
 
                 </Form.Field>
                 <Form.Field>
@@ -47,7 +48,8 @@ class NewPost extends Component {
                     <label>Post Text</label>
                     <input placeholder='Text' name="text"
                         value={this.props.newPost.text}
-                        onChange={this.props.handleChange} />
+                        onChange={this.props.handleChange}
+                        required />
 
                 </Form.Field>
 
