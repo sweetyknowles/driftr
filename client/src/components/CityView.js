@@ -1,14 +1,32 @@
 import React, { Component } from 'react';
-import axios from 'axios'
-import NewPost from './NewPost'
-import EditPost from './EditPost'
-import styled from 'styled-components'
+import axios from 'axios';
+import NewPost from './NewPost';
+import EditPost from './EditPost';
+import styled from 'styled-components';
+
+
+const ButtonDiv = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: center;
+margin: 10px;
+
+`
+
+const DeleteButton = styled.div`
+#DeleteButton {
+font-family: EB Garamond;
+background-color: rgba(209, 46, 46, 0.7);
+margin-right: 15px;
+}
+`
+
 
 const SwagBag = styled.div`
 h1 {
 
 font-family: Philosopher;
-color: darkgray;
+color: black;
 
 }
 h2, h4 {
@@ -47,7 +65,7 @@ class CityView extends Component {
     }
 
 
-    deletePost = async(postId) => {
+    deletePost = async (postId) => {
         console.log(postId)
 
         const res = await axios.delete(`/api/cities/${this.props.match.params.id}/posts/${postId}/`)
@@ -87,11 +105,11 @@ class CityView extends Component {
         this.setState({ post: updatedPost })
         console.log(this.state.post)
     }
-    handleEditSubmit = async(postId, event) => {
+    handleEditSubmit = async (postId, event) => {
         const id = this.props.match.params.id
         const res = await axios.patch(`/api/cities/${id}/posts/${postId}/`, this.state.post)
         await this.getPosts()
-        
+
     }
 
     componentDidMount() {
@@ -116,37 +134,43 @@ class CityView extends Component {
     render() {
         return (
             <div>
-            <SwagBag>
-                <h1>{this.state.city.name}</h1>
-                <img src={this.state.city.image} alt={`Image of ${this.state.city.name}`} />
-                <h1>Posts</h1>
-                {this.state.posts.map((post, i) => {
-                    return (
-                        <div id="postBox">
+                <SwagBag>
+                    <h1>{this.state.city.name}</h1>
+                    <img src={this.state.city.image} alt={`Image of ${this.state.city.name}`} />
+                    <h1>Posts</h1>
+                    {this.state.posts.map((post, i) => {
+                        return (
+                            <div id="postBox">
 
-                            <h2>{post.title}</h2>
-                            <h4>{post.text}</h4>
-                            <a onClick={() => this.deletePost(post.id)} class="waves-effect waves-light btn-large"><i class="material-icons right"></i>Delete Post</a>
-                            <EditPost post={post}
-                                handleChange={this.handleChange}
-                                handleEditSubmit={this.handleEditSubmit}
-                                handleEditChange = {this.handleEditChange}
-                            />
-                            {/* <button onClick={() => this.deletePost(post.id)}>Delete Post</button> */}
+                                <h2>{post.title}</h2>
+                                <h4>{post.text}</h4>
+                                <ButtonDiv>
+                                <DeleteButton>
+                                    <a id="DeleteButton" onClick={() => this.deletePost(post.id)} class="waves-effect waves-light btn-large"><i class="material-icons right"></i>Delete Post</a>
+                                </DeleteButton>
+                                
+                                <EditPost post={post}
+                                    handleChange={this.handleChange}
+                                    handleEditSubmit={this.handleEditSubmit}
+                                    handleEditChange={this.handleEditChange}
+                                />
+                                </ButtonDiv>
+                                <br></br>
+                                {/* <button onClick={() => this.deletePost(post.id)}>Delete Post</button> */}
 
 
 
-                        </div>
+                            </div>
 
-                    )
-                })}
-            </SwagBag>
+                        )
+                    })}
+                </SwagBag>
                 <NewPost handleChange={this.handleChange}
                     createNewPost={this.createNewPost}
                     posts={this.state.posts}
                     newPost={this.state.newPost} />
-                    
-                
+
+                        <br></br>
             </div>
         );
     }
