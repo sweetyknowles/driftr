@@ -3,15 +3,38 @@ import axios from 'axios'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-const ImgDiv = styled.div`
-height: 400px;
-overflow: hidden;
-width: 100%;
+const IntroBoxLander= styled.div`
+#LanderImg {
+border: 4px solid rgba(0, 230, 184, 0.5);
+min-width: 100vw;
+max-height: 95vh;
+}
 `
 
-const LinkStyle = styled.div`
+
+const CityNameStyler = styled.div`
+#CityName {
+    text-decoration: none;
+    
+
+}
+`
+
+const BackgroundWrapper = styled.div`
+.section-white, .row-container {
+    background-color: white;
+
+
+}
+`
+
+const TextStyle = styled.div`
 h4 {
 font-family: Philosopher;
+text-decoration: none;
+font-size: 65px;
+color: black;
+text-decoration: none;
 }
 p {
 font-family: EB Garamond;
@@ -38,8 +61,14 @@ class CityList extends Component {
 
     render() {
         return (
-
+        
             <div>
+            <IntroBoxLander>
+            <img id="LanderImg" src="https://i.imgur.com/bwVjZFm.jpg" alt="drift lander" />
+        </IntroBoxLander>
+
+
+           
                 {this.state.cities.map((city, i) => {
                     return (
                         <div>
@@ -47,6 +76,7 @@ class CityList extends Component {
 
                             </div>
 
+                         
 
                             <div class="parallax">
                                 <Link to={`/cities/${city.id}`}>
@@ -55,10 +85,10 @@ class CityList extends Component {
                             </div>
                             <div class="section white">
                                 <div class="row container">
-                                    <LinkStyle>
-                                        <h4 class="header" id="mainTopText"><Link to={`/cities/${city.id}`}>{city.name}</Link></h4>
+                                    <TextStyle>
+                                        <h4 class="header" id="mainTopText">{city.name}</h4>
                                         <p class="grey-text text-darken-3 lighten-3" id="mainSubText">{city.description}</p>
-                                    </LinkStyle>
+                                    </TextStyle>
                                 </div>
                             </div>
                         </div>

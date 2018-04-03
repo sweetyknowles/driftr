@@ -29,10 +29,7 @@ class NewPost extends Component {
             <div>
                  <a onClick={this.toggleNewPost} class="waves-effect waves-light btn-large"><i class="material-icons right"></i>New Post</a>
                
-            { this.state.newPostView
-
-        
-            ? <Form onSubmit={this.props.createNewPost}>
+            { this.state.newPostView ? <Form onSubmit={this.props.createNewPost}>
                 <Form.Field>
 
                     <label>Post Title</label>

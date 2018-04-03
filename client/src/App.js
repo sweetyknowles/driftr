@@ -6,30 +6,31 @@ import axios from "axios";
 import NavBar from "./components/NavBar";
 import CityView from "./components/CityView";
 import CityList from "./components/CityList";
-import ParalaxDemo from './components/ParalaxDemo';
 import About from './components/About';
-
-
+import Intro from './components/Intro';
+import Footer from './components/Footer';
 
 
 
 class App extends Component {
   render() {
-    
+
     return (
       <Router>
         <div className="App">
           <NavBar />
           <Switch>
-            <Route exact path="/" component={CityList}/>
-            <Route exact path="/cities/:id" component={CityView}/>
-            <Route exact path="/about" component={About}/>
+            <Route exact path="/" component={CityList} />
+            <Route exact path="/cities/:id" component={CityView} />
+            <Route exact path="/about" component={About} />
           </Switch>
+          <Footer />
         </div>
-        
-        
+
+
       </Router>
-      
+
+
     );
   }
 }

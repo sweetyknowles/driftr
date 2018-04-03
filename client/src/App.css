@@ -1,13 +1,10 @@
-.App, body{
-  text-align: center;
+
+.App {
+ text-align: center;
   background-color: rgb(189, 243, 236);
 
-}
-img {
-  
+     }
 
-  border: 2.5px solid rgb(51, 245, 196);
-}
 .background {
 background-color: blueviolet;
 
