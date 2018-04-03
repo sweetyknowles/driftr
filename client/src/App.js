@@ -6,9 +6,8 @@ import axios from "axios";
 import NavBar from "./components/NavBar";
 import CityView from "./components/CityView";
 import CityList from "./components/CityList";
-import ParalaxDemo from './components/ParalaxDemo';
 import About from './components/About';
-
+import Intro from './components/Intro';
 
 
 
@@ -20,6 +19,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <NavBar />
+          <Intro />
           <Switch>
             <Route exact path="/" component={CityList}/>
             <Route exact path="/cities/:id" component={CityView}/>

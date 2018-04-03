@@ -4,9 +4,12 @@ const NavStyle = styled.div`
 .nav-wrapper {
     background-color: rgb(0, 230, 184);
     .brand-logo, .right { 
+        font-size: 37.5px;
+        color: whitesmoke;
         font-family: Philosopher;
 }
-li {
+ a  {
+    font-size: 25px;
     font-family: EB Garamond
     background-color: rgb(0, 230, 184);
 } 

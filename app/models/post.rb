@@ -9,5 +9,6 @@ validates :title, :text :content, :presence =>true
 validates :title, :length => { :minimum => 1 }
 validates :title, :length => { :maximum => 200}
 #this will not allow the user to duplicate the post.
+validates :title, :post, uniqueness:true
 end
   

@@ -7,9 +7,16 @@ import styled from 'styled-components'
 const SwagBag = styled.div`
 h1 {
 font-family: Philosopher;
+color: darkgray;
 }
 h2, h4 {
     font-family: EB Garamond;
+}
+
+img {
+  width: 65vw;
+  height: 45vh;
+  border: 6px solid rgb(51, 245, 196); 
 }
 
 #postBox {
@@ -18,8 +25,7 @@ margin-bottom: 3.5vh;
 max-width: 75%;
 min-height: 200px;
 background: rgba(255, 255, 255, 0.2);
-border: 3px solid grey
-
+border: 4px solid grey;
 }
 `
 

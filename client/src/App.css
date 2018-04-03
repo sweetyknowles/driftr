@@ -1,15 +1,9 @@
-.App, * {
+.App {
   text-align: center;
   background-color: rgb(189, 243, 236);
 
 }
-img {
-  min-width: 60vw;
-  max-width: 60vw;
-  min-height: 475px;
-  max-height: 475px;
-  border: 2.5px solid rgb(51, 245, 196);
-}
+
 .background {
 background-color: blueviolet;
 

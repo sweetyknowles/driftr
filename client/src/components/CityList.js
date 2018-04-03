@@ -3,11 +3,28 @@ import axios from 'axios'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
+const CityNameStyler = styled.div`
+#CityName {
+    text-decoration: none;
+    
 
+}
+`
 
-const LinkStyle = styled.div`
+const BackgroundWrapper = styled.div`
+.section-white, .row-container {
+    background-color: white;
+
+}
+`
+
+const TextStyle = styled.div`
 h4 {
 font-family: Philosopher;
+text-decoration: none;
+font-size: 65px;
+color: black;
+text-decoration: none;
 }
 p {
 font-family: EB Garamond;
@@ -42,7 +59,6 @@ class CityList extends Component {
 
                             </div>
 
-
                             <div class="parallax">
                                 <Link to={`/cities/${city.id}`}>
                                     <img id="cityImage" src={city.image} alt="image here" />
@@ -50,10 +66,10 @@ class CityList extends Component {
                             </div>
                             <div class="section white">
                                 <div class="row container">
-                                    <LinkStyle>
-                                        <h4 class="header" id="mainTopText"><Link to={`/cities/${city.id}`}>{city.name}</Link></h4>
+                                    <TextStyle>
+                                        <h4 class="header" id="mainTopText">{city.name}</h4>
                                         <p class="grey-text text-darken-3 lighten-3" id="mainSubText">{city.description}</p>
-                                    </LinkStyle>
+                                    </TextStyle>
                                 </div>
                             </div>
                         </div>
