@@ -16,7 +16,7 @@ class Intro extends Component {
         return (
             <div>
                 <IntroBoxLander>
-                <img id="LanderImg"src="https://i.imgur.com/bwVjZFm.jpg" alt="drift lander"/>
+                <img id="LanderImg" class="responsive-img" src="https://i.imgur.com/bwVjZFm.jpg" alt="drift lander"/>
                 </IntroBoxLander>
                
                
