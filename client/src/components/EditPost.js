@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Button, Input } from 'semantic-ui-react';
+import { Form, Button, Input, TextArea } from 'semantic-ui-react';
 import styled from 'styled-components';
 
 
@@ -56,7 +56,7 @@ class EditPost extends Component {
                 </Form.Field>
                 <Form.Field>
                     <label>Text</label>
-                    <Input
+                    <TextArea cols="50" rows="200"
                         placeholder={this.props.post.text}
                         name="text"
                         type="text"

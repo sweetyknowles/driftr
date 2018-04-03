@@ -78,6 +78,7 @@ class CityView extends Component {
 
     createNewPost = async (event) => {
         event.preventDefault()
+        try {
         const res = await axios.post(`/api/cities/${this.state.city.id}/posts`, this.state.newPost)
         const posts = [...this.state.posts, res.data]
         this.setState({
@@ -87,7 +88,12 @@ class CityView extends Component {
                 text: ''
             }
         })
+        
         await this.getPosts()
+        }
+        catch(error){
+            alert("Make sure no input fields are blank")
+        }
     }
 
     //NEW POST handle change
@@ -100,18 +106,22 @@ class CityView extends Component {
 
     handleEditChange = (event) => {
         const updatedPost = { ...this.state.post }
-        console.log(updatedPost)
         const attribute = event.target.name
-        console.log(attribute)
         updatedPost[attribute] = event.target.value
-        console.log(updatedPost[attribute])
+        console.log(event.target.value)
+
         this.setState({ post: updatedPost })
-        console.log(this.state.post)
     }
+
     handleEditSubmit = async (postId, event) => {
         const id = this.props.match.params.id
-        const res = await axios.patch(`/api/cities/${id}/posts/${postId}/`, this.state.post)
-        await this.getPosts()
+        try {
+            const res = await axios.patch(`/api/cities/${id}/posts/${postId}/`, this.state.post)
+            await this.getPosts()
+        }
+        catch(error) {
+            await alert("Make sure no fields in your submissions are blank")
+        }
 
     }
 
