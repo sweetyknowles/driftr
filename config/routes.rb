@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-
+  root "cities#index"
+  
   namespace :api do 
     resources :cities do
       resources :posts

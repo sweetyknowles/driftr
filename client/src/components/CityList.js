@@ -24,6 +24,7 @@ const BackgroundWrapper = styled.div`
 .section-white, .row-container {
     background-color: white;
 
+
 }
 `
 
@@ -39,6 +40,7 @@ p {
 font-family: EB Garamond;
 font-size: 25px;
 }
+padding: 20px;
 `
 
 
@@ -78,7 +80,7 @@ class CityList extends Component {
 
                             <div class="parallax">
                                 <Link to={`/cities/${city.id}`}>
-                                    <img id="cityImage" src={city.image} alt="image here" />
+                                    <ImgDiv><img id="cityImage" src={city.image} alt="image here" /></ImgDiv>
                                 </Link>
                             </div>
                             <div class="section white">

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-
 const NavStyle = styled.div`
 .nav-wrapper {
     background-color: rgb(0, 230, 184);
@@ -10,9 +9,11 @@ const NavStyle = styled.div`
         color: whitesmoke;
         font-family: Philosopher;
 }
+
  a  {
     font-size: 25px;
     font-family: EB Garamond
+
     background-color: rgb(0, 230, 184);
 } 
 }
