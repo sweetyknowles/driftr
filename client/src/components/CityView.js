@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import NewPost from './NewPost'
-
+import EditPost from './EditPost'
 import styled from 'styled-components'
 
 const SwagBag = styled.div`
 h1 {
-font-family: Philosopher;
+    font-family: Philosopher;
 }
 h2, h4 {
     font-family: EB Garamond;
@@ -28,11 +28,16 @@ class CityView extends Component {
     state = {
         city: {},
         posts: [],
+        post: {
+            title: '',
+            text: ''
+        },
         newPost: {
             title: '',
             text: ''
         }
     }
+
 
     deletePost = async(postId) => {
         console.log(postId)
@@ -56,11 +61,29 @@ class CityView extends Component {
         await this.getPosts()
     }
 
+    //NEW POST handle change
     handleChange = (event) => {
         const newPost = { ...this.state.newPost }
         const attribute = event.target.name
         newPost[attribute] = event.target.value
         this.setState({ newPost: newPost })
+    }
+
+    handleEditChange = (event) => {
+        const updatedPost = { ...this.state.post }
+        console.log(updatedPost)
+        const attribute = event.target.name
+        console.log(attribute)
+        updatedPost[attribute] = event.target.value
+        console.log(updatedPost[attribute])
+        this.setState({ post: updatedPost })
+        console.log(this.state.post)
+    }
+    handleEditSubmit = async(postId, event) => {
+        const id = this.props.match.params.id
+        const res = await axios.patch(`/api/cities/${id}/posts/${postId}/`, this.state.post)
+        await this.getPosts()
+        
     }
 
     componentDidMount() {
@@ -96,7 +119,13 @@ class CityView extends Component {
                             <h2>{post.title}</h2>
                             <h4>{post.text}</h4>
                             <a onClick={() => this.deletePost(post.id)} class="waves-effect waves-light btn-large"><i class="material-icons right"></i>Delete Post</a>
+                            <EditPost post={post}
+                                handleChange={this.handleChange}
+                                handleEditSubmit={this.handleEditSubmit}
+                                handleEditChange = {this.handleEditChange}
+                            />
                             {/* <button onClick={() => this.deletePost(post.id)}>Delete Post</button> */}
+
 
 
                         </div>
@@ -108,6 +137,8 @@ class CityView extends Component {
                     createNewPost={this.createNewPost}
                     posts={this.state.posts}
                     newPost={this.state.newPost} />
+                    
+                
             </div>
         );
     }
