@@ -46,7 +46,7 @@ img {
 margin-left: 7.5vw;
 margin-bottom: 3.5vh;
 width: 85vw;
-height: 60vh;
+height: 80vh;
 background: rgba(255, 255, 255, 0.2);
 border: 4px solid grey;
 }
