@@ -12,7 +12,7 @@ const NavStyle = styled.div`
 
  a  {
     font-size: 25px;
-    font-family: EB Garamond
+    font-family: EB Garamond;
 
     background-color: rgb(0, 230, 184);
 } 

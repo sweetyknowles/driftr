@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import { Form, Button } from 'semantic-ui-react';
 import styled from 'styled-components';
 
+const NewPostButton = styled.div`
+#NewPostButton {
+background-color: rgba(49, 170, 49, 0.7);
+font-family: EB Garamond;
+}
+`
 
 
 const ButtonStyling = styled.button`
@@ -27,8 +33,9 @@ class NewPost extends Component {
     render() {
         return (
             <div>
-                 <a onClick={this.toggleNewPost} class="waves-effect waves-light btn-large"><i class="material-icons right"></i>New Post</a>
-               
+                <NewPostButton>
+                 <a id="NewPostButton"onClick={this.toggleNewPost} class="waves-effect waves-light btn-large"><i class="material-icons right"></i>New Post</a>
+                 </NewPostButton>
             { this.state.newPostView ? <Form onSubmit={this.props.createNewPost}>
                 <Form.Field>
 

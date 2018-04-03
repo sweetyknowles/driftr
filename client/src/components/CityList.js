@@ -7,7 +7,7 @@ const IntroBoxLander= styled.div`
 #LanderImg {
 border: 4px solid rgba(0, 230, 184, 0.5);
 min-width: 100vw;
-max-height: 95vh;
+max-height: 92.75vh;
 }
 `
 
