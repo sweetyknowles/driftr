@@ -80,7 +80,7 @@ class CityList extends Component {
 
                             <div class="parallax">
                                 <Link to={`/cities/${city.id}`}>
-                                    <ImgDiv><img id="cityImage" src={city.image} alt="image here" /></ImgDiv>
+                                    <img id="cityImage" src={city.image} alt="image here" />
                                 </Link>
                             </div>
                             <div class="section white">
