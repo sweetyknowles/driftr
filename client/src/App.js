@@ -20,6 +20,7 @@ class App extends Component {
         <div className="App">
           <NavBar />
           <Switch>
+            {/* route the path */}
             <Route exact path="/" component={CityList} />
             <Route exact path="/cities/:id" component={CityView} />
             <Route exact path="/about" component={About} />

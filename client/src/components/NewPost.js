@@ -17,7 +17,7 @@ class NewPost extends Component {
     state = {
         newPostView: false
     }
-
+// toggles form for the New form button
     toggleNewPost = () => {
         this.setState({ newPostView: !this.state.newPostView })
     }

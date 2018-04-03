@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+
+
+
 const NavStyle = styled.div`
 .nav-wrapper {
     background-color: rgb(0, 230, 184);
@@ -23,8 +26,9 @@ class NavBar extends Component {
     render() {
         return (
             <NavStyle>
+                
                 <nav>
-
+             {/* NavBar content         */}
                     <div class="nav-wrapper">
                         <a href="/" class="brand-logo right">Driftr Lounge</a>
                         <ul id="nav-mobile" class="left hide-on-med-and-down">

@@ -46,7 +46,7 @@ class CityView extends Component {
         }
     }
 
-
+//making axios call to perform an action 
     deletePost = async(postId) => {
         console.log(postId)
 
